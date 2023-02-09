@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "py-udp-client"
+version = "0.1.0"
+description = ""
+authors = ["Ruben Cronie <ruben.cronie@t-mobile.nl>"]
+readme = "README.md"
+packages = [{include = "py_udp_client"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
