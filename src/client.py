@@ -17,8 +17,13 @@ def start_client():
     print(f"Listening on port {UDP_PORT}")
 
     while True:
-        data, addr = sock.recvfrom(BUFFER_SIZE)
-        print(f"received message: {data}")
+        try:
+            data, addr = sock.recvfrom(BUFFER_SIZE)
+            print(f"Received message: {data}")
+        except socket.timeout as e:
+            print(f"Timeout occurred while receiving data: {e}")
+        except socket.error as e:
+            print(f"Error occurred while receiving data: {e}")
 
 
 if __name__ == "__main__":
